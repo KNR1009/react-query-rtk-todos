@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { MainTask } from "./components/MainTask";
 
-// キャッシュにアクセスするためのクライアントを作成
+// キャッシュにアクセスするためのクライアントを作成;
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
