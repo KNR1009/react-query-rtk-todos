@@ -2,6 +2,7 @@ import { VFC, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { ChevronDoubleRightIcon } from "@heroicons/react/solid";
 import { TaskListMemo } from "./TaskList";
+import { TaskEditMemo } from "./TasksEdit";
 // import { TaskEditMemo } from "./TaskEdit";
 export const MainTask: VFC = () => {
   const history = useHistory();
@@ -19,7 +20,8 @@ export const MainTask: VFC = () => {
       <p className="mb-10 text-xl font-bold">Tasks</p>
       <div className="grid grid-cols-2 gap-40">
         <TaskListMemo />
-        {/* <TaskEditMemo /> */}
+
+        <TaskEditMemo />
       </div>
       <ChevronDoubleRightIcon
         onClick={() => history.push("/tags")}

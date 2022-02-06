@@ -11,6 +11,7 @@ interface Props {
 
 const TaskItem: VFC<Props> = ({ task }) => {
   const dispatch = useAppDispatch();
+  // 削除用のAPIコール
   const { deleteTaskMutation } = useMutateTask();
   console.log("rendered TaskItem");
   if (deleteTaskMutation.isLoading) {
@@ -28,6 +29,7 @@ const TaskItem: VFC<Props> = ({ task }) => {
         <PencilAltIcon
           className="h-5 w-5 mx-1 text-blue-500 cursor-pointer"
           onClick={() => {
+            // reduxの更新
             dispatch(
               setEditedTask({
                 id: task.id,

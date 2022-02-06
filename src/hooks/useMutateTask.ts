@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useAppDispatch } from "../app/hooks";
 import { resetEditedTask } from "../slices/todoSlice";
-import { useQueryClient, useMutation, QueryClient } from "react-query";
+import { useQueryClient, useMutation } from "react-query";
 import { Task, EditTask } from "../types/types";
 
 export const useMutateTask = () => {
@@ -29,6 +29,7 @@ export const useMutateTask = () => {
     (task: EditTask) =>
       axios.put<Task>(`http://127.0.0.1:3000/tasks/${task.id}`, task),
     {
+      // variablesはリクエスト時に渡したtaskの値が入っている
       onSuccess: (res, variables) => {
         const previousTodos = queryClient.getQueryData<Task[]>("tasks");
         if (previousTodos) {
