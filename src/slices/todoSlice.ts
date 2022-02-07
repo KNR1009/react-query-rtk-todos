@@ -41,6 +41,7 @@ export const taskSlice = createSlice({
 export const { setEditedTask, resetEditedTask, setEditedTag, resetEditedTag } =
   taskSlice.actions;
 
+// 編集中のタグのグローバルstateを返す
 export const selectTask = (state: RootState) => state.task.editedTask;
 export const selectTag = (state: RootState) => state.task.editedTag;
 

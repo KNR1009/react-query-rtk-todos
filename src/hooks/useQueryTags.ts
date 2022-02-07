@@ -6,11 +6,12 @@ import { Tag } from "../types/types";
 export const useQueryTags = () => {
   // APIコール
   const getTags = async () => {
-    const { data } = await axios.get<Tag[]>("http://localhost:3000/tags");
+    const { data } = await axios.get("http://localhost:3000/tags");
     return data;
   };
 
-  return useQuery<Tag[] | Error>({
+  // タグに関してはほとんど変更がない前提
+  return useQuery<Tag[]>({
     queryKey: "tags",
     queryFn: getTags,
     staleTime: 60000,
