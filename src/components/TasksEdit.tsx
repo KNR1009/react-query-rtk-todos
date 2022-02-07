@@ -4,7 +4,7 @@ import { setEditedTask, selectTask } from "../slices/todoSlice";
 import { useQueryTags } from "../hooks/useQueryTags";
 import { useMutateTask } from "../hooks/useMutateTask";
 
-const TaskEdit: VFC = () => {
+export const TaskEdit: VFC = () => {
   // 編集モードの時のみ値が格納されている
   // 編集モードでない時はidが0番の初期値が入ってくる
   const editedTask = useAppSelector(selectTask);

@@ -9,7 +9,7 @@ interface Props {
   task: Task;
 }
 
-const TaskItem: VFC<Props> = ({ task }) => {
+export const TaskItem: VFC<Props> = ({ task }) => {
   const dispatch = useAppDispatch();
   // 削除用のAPIコール
   const { deleteTaskMutation } = useMutateTask();

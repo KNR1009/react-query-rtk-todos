@@ -2,7 +2,7 @@ import { VFC, memo } from "react";
 import { useQueryTasks } from "../hooks/useQueryTasks";
 import { TaskItemMemo } from "./TaskItem";
 
-const TaskList: VFC = () => {
+export const TaskList: VFC = () => {
   const { status, data } = useQueryTasks();
   console.log("rendered TaskList");
   if (status === "loading") return <div>{"Loading..."}</div>;
@@ -19,4 +19,6 @@ const TaskList: VFC = () => {
     </div>
   );
 };
+
 export const TaskListMemo = memo(TaskList);
+// export const TaskListMemo = memo(TaskList);

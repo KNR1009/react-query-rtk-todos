@@ -6,6 +6,7 @@ import { TaskEditMemo } from "./TasksEdit";
 // import { TaskEditMemo } from "./TaskEdit";
 export const MainTask: VFC = () => {
   const history = useHistory();
+  // 子コンポーネントには関係ないstateを用意
   const [text, setText] = useState("");
   console.log("rendered MainTask");
   return (
